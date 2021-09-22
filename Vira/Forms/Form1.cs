@@ -14,6 +14,7 @@ namespace Vira
 {
     public partial class MainForm : Form
     {
+
         public MainForm()
         {
             InitializeComponent();
@@ -21,13 +22,25 @@ namespace Vira
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.Date.Text = DateConvertor.PersianDate(OnlineDateTime.GetDateTime());
+
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                this.Show();
+                this.Date.Text = DateConvertor.PersianDate(DateTime.Now);
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            string tehranTime = OnlineDateTime.GetNetworkTime().AddHours(4).AddMinutes(30).ToString("HH:mm:ss");
-            this.Time.Text = tehranTime;
+
+            //string tehranTime = OnlineDateTime.GetNetworkTime().AddHours(3).AddMinutes(30).ToString("HH:mm:ss");
+            this.Time.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
         private void btnUserManagement_Click(object sender, EventArgs e)

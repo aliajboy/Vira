@@ -15,26 +15,37 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07633893-74D0-421B-9561-AB37B6204C0B}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{07633893-74D0-421B-9561-AB37B6204C0B}.All|Any CPU.Build.0 = Release|Any CPU
 		{07633893-74D0-421B-9561-AB37B6204C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07633893-74D0-421B-9561-AB37B6204C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07633893-74D0-421B-9561-AB37B6204C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07633893-74D0-421B-9561-AB37B6204C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6478788-C57C-42D2-B9CC-4C6388A979A5}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{F6478788-C57C-42D2-B9CC-4C6388A979A5}.All|Any CPU.Build.0 = Release|Any CPU
 		{F6478788-C57C-42D2-B9CC-4C6388A979A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6478788-C57C-42D2-B9CC-4C6388A979A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6478788-C57C-42D2-B9CC-4C6388A979A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6478788-C57C-42D2-B9CC-4C6388A979A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE5C4CF-D70A-46CD-BF44-9582B721FF2C}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE5C4CF-D70A-46CD-BF44-9582B721FF2C}.All|Any CPU.Build.0 = Release|Any CPU
 		{CFE5C4CF-D70A-46CD-BF44-9582B721FF2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CFE5C4CF-D70A-46CD-BF44-9582B721FF2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFE5C4CF-D70A-46CD-BF44-9582B721FF2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFE5C4CF-D70A-46CD-BF44-9582B721FF2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEE6CC07-6763-4668-81BB-B59C5CA36FA2}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{EEE6CC07-6763-4668-81BB-B59C5CA36FA2}.All|Any CPU.Build.0 = Release|Any CPU
 		{EEE6CC07-6763-4668-81BB-B59C5CA36FA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EEE6CC07-6763-4668-81BB-B59C5CA36FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEE6CC07-6763-4668-81BB-B59C5CA36FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEE6CC07-6763-4668-81BB-B59C5CA36FA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4828F811-6DEB-4991-AB1C-78F139316D2F}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{4828F811-6DEB-4991-AB1C-78F139316D2F}.All|Any CPU.Build.0 = Release|Any CPU
 		{4828F811-6DEB-4991-AB1C-78F139316D2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4828F811-6DEB-4991-AB1C-78F139316D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4828F811-6DEB-4991-AB1C-78F139316D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU

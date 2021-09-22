@@ -24,18 +24,17 @@ namespace Vira
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+            using (UnitOfWork db = new UnitOfWork())
+            {
 
-            if (true)
-            {
-                this.Hide();
-                var mainForm = new MainForm();
-                mainForm.Closed += (s, args) => this.Close();
-                mainForm.Show();
-            }
-            else
-            {
-                lblError.Text = "نام کاربری یا کلمه عبور نادرست می‌باشد";
+                if (db.LoginRepository.Get(l => l.UserName == txtUsername.Text && l.Password == txtPassword.Text).Any())
+                {
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("نام کاربری یا رمز عبور اشتباه است");
+                }
             }
         }
     }

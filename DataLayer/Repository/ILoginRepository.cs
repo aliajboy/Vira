@@ -6,7 +6,7 @@ namespace DataLayer.Repository
     public interface ILoginRepository
     {
         List<Login> GetAllUsers();
-        Login GetById(int id);
+        //Login GetById(int id);
         Login GetByUsername(string username);
         bool AddUser(Login login);
         bool UpdateUser(Login login);

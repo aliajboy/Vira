@@ -7,49 +7,49 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Services
 {
-    public class LoginRepository : ILoginRepository
+    public class LoginRepository 
     {
         private Navik_DBEntities db;
         public LoginRepository(Navik_DBEntities context)
         {
             db = context;
         }
-        public bool AddUser(Login login)
-        {
-            try
-            {
-                db.Logins.Add(login);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        //public bool AddUser(Login login)
+        //{
+        //    try
+        //    {
+        //        db.Logins.Add(login);
+        //        return true;
+        //    }
+        //    catch
+        //    {
+        //        return false;
+        //    }
+        //}
 
-        public bool DeleteUser(int id)
-        {
-            try
-            {
-                db.Logins.Remove(GetById(id));
-                return true;
-            }
-            catch
-            {
+        //public bool DeleteUser(int id)
+        //{
+        //    try
+        //    {
+        //        db.Logins.Remove(GetById(id));
+        //        return true;
+        //    }
+        //    catch
+        //    {
 
-                return false;
-            }
-        }
+        //        return false;
+        //    }
+        //}
 
         public List<Login> GetAllUsers()
         {
             return db.Logins.ToList();
         }
 
-        public Login GetById(int id)
-        {
-            return db.Logins.Find(id);
-        }
+        //public Login GetById(int id)
+        //{
+        //    return db.Logins.Find(id);
+        //}
 
         public Login GetByUsername(string username)
         {
