@@ -65,6 +65,7 @@
             this.btnCancell.TabIndex = 43;
             this.btnCancell.Text = "انصراف";
             this.btnCancell.UseVisualStyleBackColor = true;
+            this.btnCancell.Click += new System.EventHandler(this.btnCancell_Click);
             // 
             // btnSubmit
             // 
@@ -74,6 +75,7 @@
             this.btnSubmit.TabIndex = 42;
             this.btnSubmit.Text = "ثبت";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label11
             // 

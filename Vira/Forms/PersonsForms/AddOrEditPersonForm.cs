@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Windows.Forms;
 
 namespace Vira.Forms.PersonsForms
@@ -17,6 +18,19 @@ namespace Vira.Forms.PersonsForms
             {
                 this.Text = "ویرایش شخص";
             }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Persons persons= new Persons()
+            {
+
+            };
+        }
+
+        private void btnCancell_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
