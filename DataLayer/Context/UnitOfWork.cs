@@ -8,18 +8,6 @@ namespace DataLayer.Context
     {
         Navik_DBEntities db = new Navik_DBEntities();
 
-        //private ILoginRepository _loginRepository;
-        //public ILoginRepository loginRepository
-        //{
-        //    get
-        //    {
-        //        if (_loginRepository == null)
-        //        {
-        //            _loginRepository = new LoginRepository(db);
-        //        }
-        //        return _loginRepository;
-        //    }
-        //}
         private GenericRepository<Login> _LoginRepository;
         public GenericRepository<Login> LoginRepository
         {
@@ -30,6 +18,19 @@ namespace DataLayer.Context
                     _LoginRepository = new GenericRepository<Login>(db);
                 }
                 return _LoginRepository;
+            }
+        }
+
+        private GenericRepository<Persons> _UserRepository;
+        public GenericRepository<Persons> UserRepository
+        {
+            get
+            {
+                if (_UserRepository == null)
+                {
+                    _UserRepository = new GenericRepository<Persons>(db);
+                }
+                return _UserRepository;
             }
         }
         public void Dispose()

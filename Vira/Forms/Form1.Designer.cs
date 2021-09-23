@@ -33,8 +33,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.اشخاصToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.شخصجدیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.لیستاشخاصToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnNewPerson = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPersons = new System.Windows.Forms.ToolStripMenuItem();
             this.دریافتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.دریافتToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.لیستدریافتهاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,23 +135,25 @@
             // اشخاصToolStripMenuItem
             // 
             this.اشخاصToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.شخصجدیدToolStripMenuItem,
-            this.لیستاشخاصToolStripMenuItem});
+            this.btnNewPerson,
+            this.btnPersons});
             this.اشخاصToolStripMenuItem.Name = "اشخاصToolStripMenuItem";
-            this.اشخاصToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.اشخاصToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.اشخاصToolStripMenuItem.Text = "اشخاص";
             // 
-            // شخصجدیدToolStripMenuItem
+            // btnNewPerson
             // 
-            this.شخصجدیدToolStripMenuItem.Name = "شخصجدیدToolStripMenuItem";
-            this.شخصجدیدToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
-            this.شخصجدیدToolStripMenuItem.Text = "شخص جدید";
+            this.btnNewPerson.Name = "btnNewPerson";
+            this.btnNewPerson.Size = new System.Drawing.Size(180, 24);
+            this.btnNewPerson.Text = "شخص جدید";
+            this.btnNewPerson.Click += new System.EventHandler(this.btnNewPerson_Click);
             // 
-            // لیستاشخاصToolStripMenuItem
+            // btnPersons
             // 
-            this.لیستاشخاصToolStripMenuItem.Name = "لیستاشخاصToolStripMenuItem";
-            this.لیستاشخاصToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
-            this.لیستاشخاصToolStripMenuItem.Text = "لیست اشخاص";
+            this.btnPersons.Name = "btnPersons";
+            this.btnPersons.Size = new System.Drawing.Size(180, 24);
+            this.btnPersons.Text = "لیست اشخاص";
+            this.btnPersons.Click += new System.EventHandler(this.btnPersons_Click);
             // 
             // دریافتToolStripMenuItem
             // 
@@ -159,7 +161,7 @@
             this.دریافتToolStripMenuItem1,
             this.لیستدریافتهاToolStripMenuItem});
             this.دریافتToolStripMenuItem.Name = "دریافتToolStripMenuItem";
-            this.دریافتToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.دریافتToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.دریافتToolStripMenuItem.Text = "دریافت ها";
             // 
             // دریافتToolStripMenuItem1
@@ -180,7 +182,7 @@
             this.پرداختToolStripMenuItem,
             this.لیستپرداختهاToolStripMenuItem});
             this.پرداختهاToolStripMenuItem.Name = "پرداختهاToolStripMenuItem";
-            this.پرداختهاToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.پرداختهاToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.پرداختهاToolStripMenuItem.Text = "پرداخت ها";
             // 
             // پرداختToolStripMenuItem
@@ -198,13 +200,13 @@
             // فروشندگانToolStripMenuItem
             // 
             this.فروشندگانToolStripMenuItem.Name = "فروشندگانToolStripMenuItem";
-            this.فروشندگانToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.فروشندگانToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.فروشندگانToolStripMenuItem.Text = "فروشندگان";
             // 
             // سهامدارانToolStripMenuItem
             // 
             this.سهامدارانToolStripMenuItem.Name = "سهامدارانToolStripMenuItem";
-            this.سهامدارانToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.سهامدارانToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.سهامدارانToolStripMenuItem.Text = "سهامداران";
             // 
             // toolStripDropDownButton2
@@ -462,25 +464,25 @@
             // انبارهاToolStripMenuItem
             // 
             this.انبارهاToolStripMenuItem.Name = "انبارهاToolStripMenuItem";
-            this.انبارهاToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.انبارهاToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
             this.انبارهاToolStripMenuItem.Text = "انبار ها";
             // 
             // حوالهجدیدToolStripMenuItem
             // 
             this.حوالهجدیدToolStripMenuItem.Name = "حوالهجدیدToolStripMenuItem";
-            this.حوالهجدیدToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.حوالهجدیدToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
             this.حوالهجدیدToolStripMenuItem.Text = "حواله جدید";
             // 
             // رسیدحوالههاToolStripMenuItem
             // 
             this.رسیدحوالههاToolStripMenuItem.Name = "رسیدحوالههاToolStripMenuItem";
-            this.رسیدحوالههاToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.رسیدحوالههاToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
             this.رسیدحوالههاToolStripMenuItem.Text = "رسید حواله ها";
             // 
             // کاردکسکالاToolStripMenuItem
             // 
             this.کاردکسکالاToolStripMenuItem.Name = "کاردکسکالاToolStripMenuItem";
-            this.کاردکسکالاToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.کاردکسکالاToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
             this.کاردکسکالاToolStripMenuItem.Text = "کاردکس کالا";
             // 
             // toolStripDropDownButton7
@@ -623,8 +625,8 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem اشخاصToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem شخصجدیدToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem لیستاشخاصToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnNewPerson;
+        private System.Windows.Forms.ToolStripMenuItem btnPersons;
         private System.Windows.Forms.ToolStripMenuItem دریافتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem دریافتToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem لیستدریافتهاToolStripMenuItem;

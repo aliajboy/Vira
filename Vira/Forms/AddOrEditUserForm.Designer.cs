@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddOrEditUserForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -63,7 +64,7 @@
             this.txtUsername.MaxLength = 100;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(219, 26);
-            this.txtUsername.TabIndex = 2;
+            this.txtUsername.TabIndex = 0;
             // 
             // txtPassword
             // 
@@ -71,7 +72,7 @@
             this.txtPassword.MaxLength = 100;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(219, 26);
-            this.txtPassword.TabIndex = 3;
+            this.txtPassword.TabIndex = 1;
             // 
             // btnAdd
             // 
@@ -95,6 +96,7 @@
             // 
             // AddOrEditUserForm
             // 
+            this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(826, 467);
@@ -105,9 +107,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("IRANSansWeb", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddOrEditUserForm";
-            this.Text = "AddOrEditUser";
+            this.Text = "افزودن کاربر";
+            this.Load += new System.EventHandler(this.AddOrEditUserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

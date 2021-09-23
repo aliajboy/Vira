@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vira.Utility;
 using Utility.Converter;
+using Vira.Forms.PersonsForms;
 
 namespace Vira
 {
@@ -38,7 +31,6 @@ namespace Vira
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
             //string tehranTime = OnlineDateTime.GetNetworkTime().AddHours(3).AddMinutes(30).ToString("HH:mm:ss");
             this.Time.Text = DateTime.Now.ToString("HH:mm:ss");
         }
@@ -47,6 +39,18 @@ namespace Vira
         {
             UserManagementForm userManagementForm = new UserManagementForm();
             userManagementForm.Show();
+        }
+
+        private void btnPersons_Click(object sender, EventArgs e)
+        {
+            PersonListForm personListForm = new PersonListForm();
+            personListForm.Show();
+        }
+
+        private void btnNewPerson_Click(object sender, EventArgs e)
+        {
+            AddOrEditPersonForm personForm = new AddOrEditPersonForm();
+            personForm.Show();
         }
     }
 }

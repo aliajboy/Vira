@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Navik_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Navik_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Login">
           <Key>
             <PropertyRef Name="LoginID" />
@@ -13,11 +13,28 @@
           <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <EntityType Name="Persons">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Grouping" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Company" Type="nvarchar" MaxLength="200" />
+          <Property Name="State" Type="nvarchar" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mobile" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Telephone" Type="varchar" MaxLength="20" />
+          <Property Name="NationalID" Type="varchar" MaxLength="20" />
+          <Property Name="CompanyID" Type="varchar" MaxLength="20" />
+          <Property Name="EconomicCode" Type="varchar" MaxLength="20" />
+          <Property Name="Adress" Type="nvarchar(max)" />
+        </EntityType>
         <EntityContainer Name="Navik_DBModelStoreContainer">
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Navik_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -31,7 +48,25 @@
         </EntityType>
         <EntityContainer Name="Navik_DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Logins" EntityType="Self.Login" />
+          <EntitySet Name="Persons" EntityType="Navik_DBModel.Persons" />
         </EntityContainer>
+        <EntityType Name="Persons">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Grouping" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NationalID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EconomicCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -44,6 +79,24 @@
                 <ScalarProperty Name="LoginID" ColumnName="LoginID" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Persons">
+            <EntityTypeMapping TypeName="Navik_DBModel.Persons">
+              <MappingFragment StoreEntitySet="Persons">
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="EconomicCode" ColumnName="EconomicCode" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Grouping" ColumnName="Grouping" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -61,7 +114,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

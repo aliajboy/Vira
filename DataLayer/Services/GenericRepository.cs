@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataLayer.Services
 {
@@ -19,7 +17,6 @@ namespace DataLayer.Services
             _db = db;
             _dbSet = _db.Set<TEntity>();
         }
-
         public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> where = null)
         {
             IQueryable<TEntity> query = _dbSet;
@@ -41,6 +38,20 @@ namespace DataLayer.Services
         {
             var entity = GetById(Id);
             _dbSet.Remove(entity);
+        }
+        public void Save()
+        {
+            _db.SaveChanges();
+        }
+        public virtual void update(TEntity entity, Expression<Func<TEntity, bool>> where = null)
+        {
+            var local = _dbSet.Local.FirstOrDefault();
+            if (local != null)
+            {
+                _db.Entry(local).State = EntityState.Detached;
+            }
+            //_dbSet.Attach(entity);
+            _db.Entry(entity).State = EntityState.Modified;
         }
     }
 }

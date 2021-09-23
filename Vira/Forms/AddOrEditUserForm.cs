@@ -1,24 +1,28 @@
 ﻿using DataLayer;
 using DataLayer.Context;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vira.Forms
 {
     public partial class AddOrEditUserForm : Form
     {
-        public int? productId;
+        public int userID = 0;
         UnitOfWork db = new UnitOfWork();
         public AddOrEditUserForm()
         {
             InitializeComponent();
+        }
+
+        private void AddOrEditUserForm_Load(object sender, EventArgs e)
+        {
+            if (userID != 0)
+            {
+                this.Text = "ویرایش کاربر";
+                btnAdd.Text = "ویرایش";
+                txtUsername.Text = db.LoginRepository.GetById(userID).UserName;
+                txtPassword.Text = db.LoginRepository.GetById(userID).Password;
+            }
         }
 
         private void btnCancell_Click(object sender, EventArgs e)
@@ -33,9 +37,20 @@ namespace Vira.Forms
                 UserName = txtUsername.Text,
                 Password = txtPassword.Text
             };
-            //db.LoginRepository.AddUser(login);
-            //db.loginRepository.Save();
-            DialogResult = DialogResult.OK;
+
+            if (userID == 0)
+            {
+                db.LoginRepository.Add(login);
+                db.LoginRepository.Save();
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                login.LoginID = userID;
+                db.LoginRepository.update(login, f => f.LoginID == login.LoginID);
+                db.LoginRepository.Save();
+                DialogResult = DialogResult.OK;
+            }
         }
     }
 }

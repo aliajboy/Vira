@@ -1,12 +1,5 @@
 ﻿using DataLayer.Context;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vira.Forms;
 
@@ -38,8 +31,8 @@ namespace Vira
                 string name = dgUsers.CurrentRow.Cells[1].Value.ToString();
                 if (RtlMessageBox.Show($"آیا از حذف کاربر {name} اطمینان دارید؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    //db.LoginRepository.DeleteUser(int.Parse(dgUsers.CurrentRow.Cells[0].Value.ToString()));
-                    //db.LoginRepository.Save();
+                    db.LoginRepository.Delete(int.Parse(dgUsers.CurrentRow.Cells[0].Value.ToString()));
+                    db.LoginRepository.Save();
                 }
                 BindGrid();
             }
@@ -54,6 +47,7 @@ namespace Vira
             AddOrEditUserForm addOrEdit = new AddOrEditUserForm();
             if (addOrEdit.ShowDialog() == DialogResult.OK)
             {
+                
                 BindGrid();
             }
         }
@@ -62,11 +56,16 @@ namespace Vira
         {
             try
             {
-                if (dgUsers.CurrentRow.Selected)
+                using (UnitOfWork db = new UnitOfWork())
                 {
-                    using (UnitOfWork db = new UnitOfWork())
+                    var userId = int.Parse(dgUsers.CurrentRow.Cells[0].Value.ToString());
+                    var user = db.LoginRepository.GetById(userId);
+                    AddOrEditUserForm addOrEdit = new AddOrEditUserForm();
+                    addOrEdit.userID = userId;
+                    if (addOrEdit.ShowDialog() == DialogResult.OK)
                     {
-                        
+                        MessageBox.Show("ویرایش کاربر با موفقیت انجام شد");
+                        BindGrid();
                     }
                 }
             }
