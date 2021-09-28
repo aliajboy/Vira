@@ -47,9 +47,30 @@ namespace Vira.Forms.PersonsForms
             }
         }
 
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            string search = txtsearch.Text;
+            dgPersons.DataSource = db.UserRepository.Get(c => c.Name.Contains(search) || c.PersonID.ToString().Contains(search) || c.Mobile.Contains(search) || c.Company.Contains(search)
+            || c.Telephone.Contains(search) || c.NationalID.Contains(search));
+        }
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            var personId = int.Parse(dgPersons.CurrentRow.Cells[0].Value.ToString());
+            var person = db.UserRepository.GetById(personId);
+            AddOrEditPersonForm addOrEdit = new AddOrEditPersonForm();
+            addOrEdit.personId = personId;
+            if (addOrEdit.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("ویرایش شخص با موفقیت انجام شد");
+                BindGrid();
+            }
+        }
 
+        private void dgPersons_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var personId = int.Parse(dgPersons.CurrentRow.Cells[0].Value.ToString());
+            var person = db.UserRepository.GetById(personId);
         }
     }
 }

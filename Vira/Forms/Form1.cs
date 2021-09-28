@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Utility.Converter;
 using Vira.Forms.PersonsForms;
+using Vira.Forms.ReceiptsForms;
 
 namespace Vira
 {
@@ -50,7 +51,22 @@ namespace Vira
         private void btnNewPerson_Click(object sender, EventArgs e)
         {
             AddOrEditPersonForm personForm = new AddOrEditPersonForm();
-            personForm.Show();
+            if (personForm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("!شخص مورد نظر با موفقیت افزوده شد");
+            }
+        }
+
+        private void btnNewReceipt_Click(object sender, EventArgs e)
+        {
+            ReceiptForm receipt = new ReceiptForm();
+            receipt.Show();
+        }
+
+        private void btnReceipts_Click(object sender, EventArgs e)
+        {
+            ReceiptListForm receiptList = new ReceiptListForm();
+            receiptList.Show();
         }
     }
 }

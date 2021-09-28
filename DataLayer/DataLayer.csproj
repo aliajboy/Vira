@@ -73,6 +73,9 @@
       <DependentUpon>LoginModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receipt.cs">
+      <DependentUpon>LoginModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Repository\ILoginRepository.cs" />
     <Compile Include="Services\GenericRepository.cs" />
   </ItemGroup>

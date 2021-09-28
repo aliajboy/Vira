@@ -72,7 +72,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(21, 343);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(93, 27);
-            this.btnSubmit.TabIndex = 42;
+            this.btnSubmit.TabIndex = 3;
             this.btnSubmit.Text = "ثبت";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -194,7 +194,7 @@
             this.txtMobile.Location = new System.Drawing.Point(352, 252);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(193, 26);
-            this.txtMobile.TabIndex = 34;
+            this.txtMobile.TabIndex = 2;
             // 
             // label6
             // 
@@ -242,15 +242,20 @@
             this.txtName.Location = new System.Drawing.Point(352, 63);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(193, 26);
-            this.txtName.TabIndex = 28;
+            this.txtName.TabIndex = 1;
             // 
             // cbGroup
             // 
+            this.cbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGroup.FormattingEnabled = true;
+            this.cbGroup.Items.AddRange(new object[] {
+            "خریدار",
+            "فروشنده",
+            "کارمند"});
             this.cbGroup.Location = new System.Drawing.Point(352, 20);
             this.cbGroup.Name = "cbGroup";
             this.cbGroup.Size = new System.Drawing.Size(193, 27);
-            this.cbGroup.TabIndex = 27;
+            this.cbGroup.TabIndex = 0;
             // 
             // label2
             // 

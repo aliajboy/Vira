@@ -33,6 +33,19 @@ namespace DataLayer.Context
                 return _UserRepository;
             }
         }
+
+        private GenericRepository<Receipt> _ReceiptRepository;
+        public GenericRepository<Receipt> ReceiptRepository
+        {
+            get
+            {
+                if (_ReceiptRepository == null)
+                {
+                    _ReceiptRepository = new GenericRepository<Receipt>(db);
+                }
+                return _ReceiptRepository;
+            }
+        }
         public void Dispose()
         {
             db.Dispose();

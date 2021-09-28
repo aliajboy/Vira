@@ -26,6 +26,11 @@ namespace DataLayer.Services
             }
             return query.ToList();
         }
+        public virtual IEnumerable<TEntity> Search(Expression<Func<TEntity, bool>> where = null)
+        {
+            _dbSet = _db.Set<TEntity>();
+            return _dbSet.Where(where).ToList();
+        }
         public virtual void Add(TEntity entity)
         {
             _dbSet.Add(entity);

@@ -47,7 +47,7 @@ namespace Vira
             AddOrEditUserForm addOrEdit = new AddOrEditUserForm();
             if (addOrEdit.ShowDialog() == DialogResult.OK)
             {
-                
+
                 BindGrid();
             }
         }
@@ -56,17 +56,14 @@ namespace Vira
         {
             try
             {
-                using (UnitOfWork db = new UnitOfWork())
+                var userId = int.Parse(dgUsers.CurrentRow.Cells[0].Value.ToString());
+                var user = db.LoginRepository.GetById(userId);
+                AddOrEditUserForm addOrEdit = new AddOrEditUserForm();
+                addOrEdit.userID = userId;
+                if (addOrEdit.ShowDialog() == DialogResult.OK)
                 {
-                    var userId = int.Parse(dgUsers.CurrentRow.Cells[0].Value.ToString());
-                    var user = db.LoginRepository.GetById(userId);
-                    AddOrEditUserForm addOrEdit = new AddOrEditUserForm();
-                    addOrEdit.userID = userId;
-                    if (addOrEdit.ShowDialog() == DialogResult.OK)
-                    {
-                        MessageBox.Show("ویرایش کاربر با موفقیت انجام شد");
-                        BindGrid();
-                    }
+                    MessageBox.Show("ویرایش کاربر با موفقیت انجام شد");
+                    BindGrid();
                 }
             }
             catch
