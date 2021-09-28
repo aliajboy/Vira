@@ -14,7 +14,7 @@ namespace Vira.Forms.ReceiptsForms
 
         private void ReceiptListForm_Load(object sender, EventArgs e)
         {
-            dgReceipts.DataSource = db.ReceiptRepository.Get();
+            dgReceipts.DataSource = db.ReceiptRepository.GetAll();
             dgReceipts.AutoGenerateColumns = false;
         }
 

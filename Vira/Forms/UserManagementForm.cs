@@ -21,7 +21,7 @@ namespace Vira
 
         void BindGrid()
         {
-            dgUsers.DataSource = db.LoginRepository.Get();
+            dgUsers.DataSource = db.LoginRepository.GetAll();
         }
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
@@ -47,12 +47,11 @@ namespace Vira
             AddOrEditUserForm addOrEdit = new AddOrEditUserForm();
             if (addOrEdit.ShowDialog() == DialogResult.OK)
             {
-
                 BindGrid();
             }
         }
 
-        private void dgUsers_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {

@@ -95,8 +95,10 @@ namespace Vira.Forms.ReceiptsForms
 
         private void txtName_Click(object sender, EventArgs e)
         {
-            PersonListForm Persons = new PersonListForm();
-            Persons.Show();
+            PersonListForm Person = new PersonListForm();
+            Person.ShowDialog();
+            txtName.Text = Person.name;
+            Person.Dispose();
         }
     }
 }

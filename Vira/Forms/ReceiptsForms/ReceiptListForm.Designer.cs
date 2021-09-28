@@ -121,10 +121,10 @@
             // Price
             // 
             this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "مبلغ";
+            this.Price.HeaderText = "مبلغ کل";
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
-            this.Price.Width = 54;
+            this.Price.Width = 71;
             // 
             // ReceiptListForm
             // 

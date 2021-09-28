@@ -2,6 +2,7 @@
 using DataLayer.Context;
 using System;
 using System.Windows.Forms;
+using Utility;
 
 namespace Vira.Forms
 {
@@ -32,10 +33,11 @@ namespace Vira.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            int pass = txtPassword.Text.GetHashCode();
             Login login = new Login()
             {
                 UserName = txtUsername.Text,
-                Password = txtPassword.Text
+                Password = Encrypte.EncryptPlainTextToCipherText(txtPassword.Text)
             };
 
             if (userID == 0)

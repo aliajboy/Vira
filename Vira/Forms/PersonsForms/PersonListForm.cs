@@ -1,12 +1,5 @@
 ﻿using DataLayer.Context;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vira.Forms.PersonsForms
@@ -20,7 +13,7 @@ namespace Vira.Forms.PersonsForms
         }
         void BindGrid()
         {
-            dgPersons.DataSource = db.UserRepository.Get();
+            dgPersons.DataSource = db.UserRepository.GetAll();
         }
 
         private void PersonListForm_Load_1(object sender, EventArgs e)
@@ -56,21 +49,28 @@ namespace Vira.Forms.PersonsForms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            var personId = int.Parse(dgPersons.CurrentRow.Cells[0].Value.ToString());
-            var person = db.UserRepository.GetById(personId);
-            AddOrEditPersonForm addOrEdit = new AddOrEditPersonForm();
-            addOrEdit.personId = personId;
-            if (addOrEdit.ShowDialog() == DialogResult.OK)
+            try
             {
-                MessageBox.Show("ویرایش شخص با موفقیت انجام شد");
+                var personId = int.Parse(dgPersons.CurrentRow.Cells[0].Value.ToString());
+                var person = db.UserRepository.GetById(personId);
+                AddOrEditPersonForm addOrEdit = new AddOrEditPersonForm();
+                addOrEdit.personId = personId;
+                if (addOrEdit.ShowDialog() == DialogResult.OK)
+                {
+
+                    MessageBox.Show("ویرایش شخص با موفقیت انجام شد");
+                }
+            }
+            finally
+            {
                 BindGrid();
             }
         }
-
+        public string name { get; private set; }
         private void dgPersons_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var personId = int.Parse(dgPersons.CurrentRow.Cells[0].Value.ToString());
-            var person = db.UserRepository.GetById(personId);
+            name = dgPersons.CurrentRow.Cells[2].Value.ToString();
+            this.Close();
         }
     }
 }

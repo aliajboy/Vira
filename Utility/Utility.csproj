@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Converter\DateConvertor.cs" />
     <Compile Include="Converter\RtlMessageBox.cs" />
+    <Compile Include="Encrypte.cs" />
     <Compile Include="OnlineDateTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
