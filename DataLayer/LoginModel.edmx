@@ -11,7 +11,26 @@
           </Key>
           <Property Name="LoginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Date" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TotalPrice" Type="int" Nullable="false" />
+          <Property Name="Factor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price1" Type="int" Nullable="false" />
+          <Property Name="Type2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price2" Type="int" />
+          <Property Name="Type3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price3" Type="int" />
+          <Property Name="Type4" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price4" Type="int" />
         </EntityType>
         <EntityType Name="Persons">
           <Key>
@@ -38,6 +57,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Date" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Factor" Type="nvarchar" MaxLength="50" />
           <Property Name="Price" Type="int" Nullable="false" />
           <Property Name="Price1" Type="int" Nullable="false" />
           <Property Name="Type1" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -50,6 +70,7 @@
         </EntityType>
         <EntityContainer Name="Navik_DBModelStoreContainer">
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Receipt" EntityType="Self.Receipt" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -63,12 +84,13 @@
           </Key>
           <Property Name="LoginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityContainer Name="Navik_DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Logins" EntityType="Self.Login" />
           <EntitySet Name="Persons" EntityType="Navik_DBModel.Persons" />
           <EntitySet Name="Receipt" EntityType="Navik_DBModel.Receipt" />
+          <EntitySet Name="Payment" EntityType="Navik_DBModel.Payment" />
         </EntityContainer>
         <EntityType Name="Persons">
           <Key>
@@ -104,6 +126,26 @@
           <Property Name="Type2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Type3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Type4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Factor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalPrice" Type="Int32" Nullable="false" />
+          <Property Name="Factor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price1" Type="Int32" Nullable="false" />
+          <Property Name="Type2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price2" Type="Int32" />
+          <Property Name="Type3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price3" Type="Int32" />
+          <Property Name="Type4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price4" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -141,6 +183,7 @@
           <EntitySetMapping Name="Receipt">
             <EntityTypeMapping TypeName="Navik_DBModel.Receipt">
               <MappingFragment StoreEntitySet="Receipt">
+                <ScalarProperty Name="Factor" ColumnName="Factor" />
                 <ScalarProperty Name="Type4" ColumnName="Type4" />
                 <ScalarProperty Name="Type3" ColumnName="Type3" />
                 <ScalarProperty Name="Type2" ColumnName="Type2" />
@@ -152,6 +195,26 @@
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payment">
+            <EntityTypeMapping TypeName="Navik_DBModel.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="Price4" ColumnName="Price4" />
+                <ScalarProperty Name="Type4" ColumnName="Type4" />
+                <ScalarProperty Name="Price3" ColumnName="Price3" />
+                <ScalarProperty Name="Type3" ColumnName="Type3" />
+                <ScalarProperty Name="Price2" ColumnName="Price2" />
+                <ScalarProperty Name="Type2" ColumnName="Type2" />
+                <ScalarProperty Name="Price1" ColumnName="Price1" />
+                <ScalarProperty Name="Type1" ColumnName="Type1" />
+                <ScalarProperty Name="Factor" ColumnName="Factor" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>

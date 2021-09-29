@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Utility.Converter;
+using Vira.Forms.PaymentsForm;
 using Vira.Forms.PersonsForms;
 using Vira.Forms.ReceiptsForms;
 
@@ -67,6 +68,18 @@ namespace Vira
         {
             ReceiptListForm receiptList = new ReceiptListForm();
             receiptList.Show();
+        }
+
+        private void PayForm_Click(object sender, EventArgs e)
+        {
+            PaymentForm pay = new PaymentForm();
+            pay.Show();
+        }
+
+        private void PayListForm_Click(object sender, EventArgs e)
+        {
+            PaymentListForm paymentList = new PaymentListForm();
+            paymentList.Show();
         }
     }
 }

@@ -62,6 +62,8 @@
             this.requiredFieldValidator3 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator4 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator5 = new ValidationComponents.RequiredFieldValidator(this.components);
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbFactor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.TotalPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Price1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Price2)).BeginInit();
@@ -97,7 +99,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(707, 86);
+            this.label3.Location = new System.Drawing.Point(707, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 19);
             this.label3.TabIndex = 4;
@@ -105,7 +107,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(469, 79);
+            this.txtName.Location = new System.Drawing.Point(469, 131);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(207, 26);
             this.txtName.TabIndex = 5;
@@ -114,7 +116,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(363, 86);
+            this.label4.Location = new System.Drawing.Point(363, 138);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 19);
             this.label4.TabIndex = 7;
@@ -128,7 +130,7 @@
             "بانک",
             "نقدی",
             "تنخواه گردان"});
-            this.cbType1.Location = new System.Drawing.Point(469, 136);
+            this.cbType1.Location = new System.Drawing.Point(469, 188);
             this.cbType1.Name = "cbType1";
             this.cbType1.Size = new System.Drawing.Size(207, 27);
             this.cbType1.TabIndex = 8;
@@ -146,7 +148,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(682, 139);
+            this.label5.Location = new System.Drawing.Point(682, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 19);
             this.label5.TabIndex = 10;
@@ -155,7 +157,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(380, 139);
+            this.label6.Location = new System.Drawing.Point(380, 191);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 19);
             this.label6.TabIndex = 11;
@@ -163,7 +165,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(12, 365);
+            this.btnSubmit.Location = new System.Drawing.Point(12, 417);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(99, 27);
             this.btnSubmit.TabIndex = 25;
@@ -173,7 +175,7 @@
             // 
             // btnCancell
             // 
-            this.btnCancell.Location = new System.Drawing.Point(121, 365);
+            this.btnCancell.Location = new System.Drawing.Point(121, 417);
             this.btnCancell.Name = "btnCancell";
             this.btnCancell.Size = new System.Drawing.Size(99, 27);
             this.btnCancell.TabIndex = 26;
@@ -189,7 +191,7 @@
             "بانک",
             "نقدی",
             "تنخواه گردان"});
-            this.cbType2.Location = new System.Drawing.Point(469, 196);
+            this.cbType2.Location = new System.Drawing.Point(469, 248);
             this.cbType2.Name = "cbType2";
             this.cbType2.Size = new System.Drawing.Size(207, 27);
             this.cbType2.TabIndex = 13;
@@ -197,7 +199,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(682, 199);
+            this.label8.Location = new System.Drawing.Point(682, 251);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 19);
             this.label8.TabIndex = 14;
@@ -206,7 +208,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(380, 199);
+            this.label7.Location = new System.Drawing.Point(380, 251);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(36, 19);
             this.label7.TabIndex = 15;
@@ -216,7 +218,7 @@
             // 
             this.cbType3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbType3.FormattingEnabled = true;
-            this.cbType3.Location = new System.Drawing.Point(469, 254);
+            this.cbType3.Location = new System.Drawing.Point(469, 306);
             this.cbType3.Name = "cbType3";
             this.cbType3.Size = new System.Drawing.Size(207, 27);
             this.cbType3.TabIndex = 17;
@@ -224,7 +226,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(682, 257);
+            this.label10.Location = new System.Drawing.Point(682, 309);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 19);
             this.label10.TabIndex = 18;
@@ -233,7 +235,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(380, 257);
+            this.label9.Location = new System.Drawing.Point(380, 309);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 19);
             this.label9.TabIndex = 19;
@@ -243,7 +245,7 @@
             // 
             this.cbType4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbType4.FormattingEnabled = true;
-            this.cbType4.Location = new System.Drawing.Point(469, 309);
+            this.cbType4.Location = new System.Drawing.Point(469, 361);
             this.cbType4.Name = "cbType4";
             this.cbType4.Size = new System.Drawing.Size(207, 27);
             this.cbType4.TabIndex = 21;
@@ -251,7 +253,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(682, 312);
+            this.label12.Location = new System.Drawing.Point(682, 364);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(91, 19);
             this.label12.TabIndex = 22;
@@ -260,7 +262,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(380, 312);
+            this.label11.Location = new System.Drawing.Point(380, 364);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 19);
             this.label11.TabIndex = 23;
@@ -277,7 +279,7 @@
             // TotalPrice
             // 
             this.TotalPrice.InterceptArrowKeys = false;
-            this.TotalPrice.Location = new System.Drawing.Point(183, 79);
+            this.TotalPrice.Location = new System.Drawing.Point(183, 131);
             this.TotalPrice.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -291,7 +293,7 @@
             // Price1
             // 
             this.Price1.InterceptArrowKeys = false;
-            this.Price1.Location = new System.Drawing.Point(183, 137);
+            this.Price1.Location = new System.Drawing.Point(183, 189);
             this.Price1.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -305,7 +307,7 @@
             // Price2
             // 
             this.Price2.InterceptArrowKeys = false;
-            this.Price2.Location = new System.Drawing.Point(183, 196);
+            this.Price2.Location = new System.Drawing.Point(183, 248);
             this.Price2.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -319,7 +321,7 @@
             // Price3
             // 
             this.Price3.InterceptArrowKeys = false;
-            this.Price3.Location = new System.Drawing.Point(183, 254);
+            this.Price3.Location = new System.Drawing.Point(183, 306);
             this.Price3.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -333,7 +335,7 @@
             // Price4
             // 
             this.Price4.InterceptArrowKeys = false;
-            this.Price4.Location = new System.Drawing.Point(183, 309);
+            this.Price4.Location = new System.Drawing.Point(183, 361);
             this.Price4.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -379,11 +381,30 @@
             this.requiredFieldValidator5.ErrorMessage = "مبلغ را وارد نمایید";
             this.requiredFieldValidator5.Icon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator5.Icon")));
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(700, 82);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 19);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "شماره فاکتور :";
+            // 
+            // cbFactor
+            // 
+            this.cbFactor.FormattingEnabled = true;
+            this.cbFactor.Location = new System.Drawing.Point(469, 76);
+            this.cbFactor.Name = "cbFactor";
+            this.cbFactor.Size = new System.Drawing.Size(207, 27);
+            this.cbFactor.TabIndex = 33;
+            // 
             // ReceiptForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(785, 408);
+            this.ClientSize = new System.Drawing.Size(785, 458);
+            this.Controls.Add(this.cbFactor);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.Price4);
             this.Controls.Add(this.Price3);
             this.Controls.Add(this.Price2);
@@ -463,5 +484,7 @@
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator3;
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator4;
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator5;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbFactor;
     }
 }

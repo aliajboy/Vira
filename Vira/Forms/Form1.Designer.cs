@@ -37,10 +37,11 @@
             this.btnPersons = new System.Windows.Forms.ToolStripMenuItem();
             this.دریافتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNewReceipt = new System.Windows.Forms.ToolStripMenuItem();
+            this.دریافتچکToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnReceipts = new System.Windows.Forms.ToolStripMenuItem();
             this.پرداختهاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.پرداختToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.لیستپرداختهاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PayForm = new System.Windows.Forms.ToolStripMenuItem();
+            this.PayListForm = new System.Windows.Forms.ToolStripMenuItem();
             this.فروشندگانToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.سهامدارانToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -91,7 +92,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.دریافتچکToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -169,37 +169,45 @@
             // btnNewReceipt
             // 
             this.btnNewReceipt.Name = "btnNewReceipt";
-            this.btnNewReceipt.Size = new System.Drawing.Size(180, 24);
+            this.btnNewReceipt.Size = new System.Drawing.Size(161, 24);
             this.btnNewReceipt.Text = "دریافت";
             this.btnNewReceipt.Click += new System.EventHandler(this.btnNewReceipt_Click);
+            // 
+            // دریافتچکToolStripMenuItem
+            // 
+            this.دریافتچکToolStripMenuItem.Name = "دریافتچکToolStripMenuItem";
+            this.دریافتچکToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
+            this.دریافتچکToolStripMenuItem.Text = "دریافت چک";
             // 
             // btnReceipts
             // 
             this.btnReceipts.Name = "btnReceipts";
-            this.btnReceipts.Size = new System.Drawing.Size(180, 24);
+            this.btnReceipts.Size = new System.Drawing.Size(161, 24);
             this.btnReceipts.Text = "لیست دریافت ها";
             this.btnReceipts.Click += new System.EventHandler(this.btnReceipts_Click);
             // 
             // پرداختهاToolStripMenuItem
             // 
             this.پرداختهاToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.پرداختToolStripMenuItem,
-            this.لیستپرداختهاToolStripMenuItem});
+            this.PayForm,
+            this.PayListForm});
             this.پرداختهاToolStripMenuItem.Name = "پرداختهاToolStripMenuItem";
             this.پرداختهاToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.پرداختهاToolStripMenuItem.Text = "پرداخت ها";
             // 
-            // پرداختToolStripMenuItem
+            // PayForm
             // 
-            this.پرداختToolStripMenuItem.Name = "پرداختToolStripMenuItem";
-            this.پرداختToolStripMenuItem.Size = new System.Drawing.Size(163, 24);
-            this.پرداختToolStripMenuItem.Text = "پرداخت";
+            this.PayForm.Name = "PayForm";
+            this.PayForm.Size = new System.Drawing.Size(180, 24);
+            this.PayForm.Text = "پرداخت";
+            this.PayForm.Click += new System.EventHandler(this.PayForm_Click);
             // 
-            // لیستپرداختهاToolStripMenuItem
+            // PayListForm
             // 
-            this.لیستپرداختهاToolStripMenuItem.Name = "لیستپرداختهاToolStripMenuItem";
-            this.لیستپرداختهاToolStripMenuItem.Size = new System.Drawing.Size(163, 24);
-            this.لیستپرداختهاToolStripMenuItem.Text = "لیست پرداخت ها";
+            this.PayListForm.Name = "PayListForm";
+            this.PayListForm.Size = new System.Drawing.Size(180, 24);
+            this.PayListForm.Text = "لیست پرداخت ها";
+            this.PayListForm.Click += new System.EventHandler(this.PayListForm_Click);
             // 
             // فروشندگانToolStripMenuItem
             // 
@@ -264,19 +272,19 @@
             // بانکهاToolStripMenuItem
             // 
             this.بانکهاToolStripMenuItem.Name = "بانکهاToolStripMenuItem";
-            this.بانکهاToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.بانکهاToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
             this.بانکهاToolStripMenuItem.Text = "بانک ها";
             // 
             // صندوقهاToolStripMenuItem
             // 
             this.صندوقهاToolStripMenuItem.Name = "صندوقهاToolStripMenuItem";
-            this.صندوقهاToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.صندوقهاToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
             this.صندوقهاToolStripMenuItem.Text = "صندوق ها";
             // 
             // تنخواهگردانهاToolStripMenuItem
             // 
             this.تنخواهگردانهاToolStripMenuItem.Name = "تنخواهگردانهاToolStripMenuItem";
-            this.تنخواهگردانهاToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.تنخواهگردانهاToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
             this.تنخواهگردانهاToolStripMenuItem.Text = "تنخواه گردان ها";
             // 
             // انتقالاتToolStripMenuItem
@@ -285,7 +293,7 @@
             this.انتقالToolStripMenuItem,
             this.لیستانقالهاToolStripMenuItem});
             this.انتقالاتToolStripMenuItem.Name = "انتقالاتToolStripMenuItem";
-            this.انتقالاتToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.انتقالاتToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
             this.انتقالاتToolStripMenuItem.Text = "انتقالات";
             // 
             // انتقالToolStripMenuItem
@@ -307,25 +315,25 @@
             this.چکهایپرداختیToolStripMenuItem,
             this.چکهایبرگشتیToolStripMenuItem});
             this.چکهاToolStripMenuItem.Name = "چکهاToolStripMenuItem";
-            this.چکهاToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.چکهاToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
             this.چکهاToolStripMenuItem.Text = "چک ها";
             // 
             // چکهایدریافتیToolStripMenuItem
             // 
             this.چکهایدریافتیToolStripMenuItem.Name = "چکهایدریافتیToolStripMenuItem";
-            this.چکهایدریافتیToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.چکهایدریافتیToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.چکهایدریافتیToolStripMenuItem.Text = "چک های دریافتی";
             // 
             // چکهایپرداختیToolStripMenuItem
             // 
             this.چکهایپرداختیToolStripMenuItem.Name = "چکهایپرداختیToolStripMenuItem";
-            this.چکهایپرداختیToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.چکهایپرداختیToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.چکهایپرداختیToolStripMenuItem.Text = "چک های پرداختی";
             // 
             // چکهایبرگشتیToolStripMenuItem
             // 
             this.چکهایبرگشتیToolStripMenuItem.Name = "چکهایبرگشتیToolStripMenuItem";
-            this.چکهایبرگشتیToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.چکهایبرگشتیToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.چکهایبرگشتیToolStripMenuItem.Text = "چک های برگشتی";
             // 
             // toolStripDropDownButton4
@@ -468,25 +476,25 @@
             // انبارهاToolStripMenuItem
             // 
             this.انبارهاToolStripMenuItem.Name = "انبارهاToolStripMenuItem";
-            this.انبارهاToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.انبارهاToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
             this.انبارهاToolStripMenuItem.Text = "انبار ها";
             // 
             // حوالهجدیدToolStripMenuItem
             // 
             this.حوالهجدیدToolStripMenuItem.Name = "حوالهجدیدToolStripMenuItem";
-            this.حوالهجدیدToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.حوالهجدیدToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
             this.حوالهجدیدToolStripMenuItem.Text = "حواله جدید";
             // 
             // رسیدحوالههاToolStripMenuItem
             // 
             this.رسیدحوالههاToolStripMenuItem.Name = "رسیدحوالههاToolStripMenuItem";
-            this.رسیدحوالههاToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.رسیدحوالههاToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
             this.رسیدحوالههاToolStripMenuItem.Text = "رسید حواله ها";
             // 
             // کاردکسکالاToolStripMenuItem
             // 
             this.کاردکسکالاToolStripMenuItem.Name = "کاردکسکالاToolStripMenuItem";
-            this.کاردکسکالاToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.کاردکسکالاToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
             this.کاردکسکالاToolStripMenuItem.Text = "کاردکس کالا";
             // 
             // toolStripDropDownButton7
@@ -594,12 +602,6 @@
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
-            // دریافتچکToolStripMenuItem
-            // 
-            this.دریافتچکToolStripMenuItem.Name = "دریافتچکToolStripMenuItem";
-            this.دریافتچکToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.دریافتچکToolStripMenuItem.Text = "دریافت چک";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -641,8 +643,8 @@
         private System.Windows.Forms.ToolStripMenuItem btnNewReceipt;
         private System.Windows.Forms.ToolStripMenuItem btnReceipts;
         private System.Windows.Forms.ToolStripMenuItem پرداختهاToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem پرداختToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem لیستپرداختهاToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PayForm;
+        private System.Windows.Forms.ToolStripMenuItem PayListForm;
         private System.Windows.Forms.ToolStripMenuItem فروشندگانToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem سهامدارانToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;

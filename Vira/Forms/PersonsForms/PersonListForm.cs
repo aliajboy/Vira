@@ -49,21 +49,14 @@ namespace Vira.Forms.PersonsForms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var personId = int.Parse(dgPersons.CurrentRow.Cells[0].Value.ToString());
-                var person = db.UserRepository.GetById(personId);
-                AddOrEditPersonForm addOrEdit = new AddOrEditPersonForm();
-                addOrEdit.personId = personId;
-                if (addOrEdit.ShowDialog() == DialogResult.OK)
-                {
-
-                    MessageBox.Show("ویرایش شخص با موفقیت انجام شد");
-                }
-            }
-            finally
+            var personId = int.Parse(dgPersons.CurrentRow.Cells[0].Value.ToString());
+            var person = db.UserRepository.GetById(personId);
+            AddOrEditPersonForm addOrEdit = new AddOrEditPersonForm();
+            addOrEdit.personId = personId;
+            if (addOrEdit.ShowDialog() == DialogResult.OK)
             {
                 BindGrid();
+                MessageBox.Show("ویرایش شخص با موفقیت انجام شد");
             }
         }
         public string name { get; private set; }

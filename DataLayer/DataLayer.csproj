@@ -69,6 +69,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LoginModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Payment.cs">
+      <DependentUpon>LoginModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Persons.cs">
       <DependentUpon>LoginModel.tt</DependentUpon>
     </Compile>

@@ -12,21 +12,21 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class Receipt
+    public partial class Payment
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
         public string Date { get; set; }
-        public int Price { get; set; }
-        public int Price1 { get; set; }
-        public Nullable<int> Price2 { get; set; }
-        public Nullable<int> Price3 { get; set; }
-        public Nullable<int> Price4 { get; set; }
-        public string Type1 { get; set; }
-        public string Type2 { get; set; }
-        public string Type3 { get; set; }
-        public string Type4 { get; set; }
+        public string Description { get; set; }
+        public int TotalPrice { get; set; }
         public string Factor { get; set; }
+        public string Type1 { get; set; }
+        public int Price1 { get; set; }
+        public string Type2 { get; set; }
+        public Nullable<int> Price2 { get; set; }
+        public string Type3 { get; set; }
+        public Nullable<int> Price3 { get; set; }
+        public string Type4 { get; set; }
+        public Nullable<int> Price4 { get; set; }
     }
 }

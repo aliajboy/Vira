@@ -46,6 +46,18 @@ namespace DataLayer.Context
                 return _ReceiptRepository;
             }
         }
+        private GenericRepository<Payment> _PaymentRepository;
+        public GenericRepository<Payment> PaymentRepository
+        {
+            get
+            {
+                if (_PaymentRepository == null)
+                {
+                    _PaymentRepository = new GenericRepository<Payment>(db);
+                }
+                return _PaymentRepository;
+            }
+        }
         public void Dispose()
         {
             db.Dispose();
