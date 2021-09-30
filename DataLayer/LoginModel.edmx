@@ -5,6 +5,31 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Navik_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cardex">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Number" Type="int" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Inventory" Type="nvarchar" MaxLength="50" />
+          <Property Name="Place1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Place2" Type="nvarchar" MaxLength="50" />
+          <Property Name="MinNumber" Type="int" Nullable="false" />
+          <Property Name="Link" Type="varchar(max)" />
+          <Property Name="Description" Type="nvarchar" MaxLength="350" />
+          <Property Name="OrderNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adress" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="Login">
           <Key>
             <PropertyRef Name="LoginID" />
@@ -69,6 +94,8 @@
           <Property Name="Type4" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="Navik_DBModelStoreContainer">
+          <EntitySet Name="Cardex" EntityType="Self.Cardex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
@@ -91,6 +118,8 @@
           <EntitySet Name="Persons" EntityType="Navik_DBModel.Persons" />
           <EntitySet Name="Receipt" EntityType="Navik_DBModel.Receipt" />
           <EntitySet Name="Payment" EntityType="Navik_DBModel.Payment" />
+          <EntitySet Name="Cardex" EntityType="Navik_DBModel.Cardex" />
+          <EntitySet Name="Inventory" EntityType="Navik_DBModel.Inventory" />
         </EntityContainer>
         <EntityType Name="Persons">
           <Key>
@@ -146,6 +175,31 @@
           <Property Name="Price3" Type="Int32" />
           <Property Name="Type4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Price4" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Cardex">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Inventory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Place1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Place2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MinNumber" Type="Int32" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="OrderNumber" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Adress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -215,6 +269,33 @@
                 <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cardex">
+            <EntityTypeMapping TypeName="Navik_DBModel.Cardex">
+              <MappingFragment StoreEntitySet="Cardex">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="MinNumber" ColumnName="MinNumber" />
+                <ScalarProperty Name="Place2" ColumnName="Place2" />
+                <ScalarProperty Name="Place1" ColumnName="Place1" />
+                <ScalarProperty Name="Inventory" ColumnName="Inventory" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventory">
+            <EntityTypeMapping TypeName="Navik_DBModel.Inventory">
+              <MappingFragment StoreEntitySet="Inventory">
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>

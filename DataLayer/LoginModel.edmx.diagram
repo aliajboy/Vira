@@ -9,6 +9,8 @@
         <EntityTypeShape EntityType="Navik_DBModel.Persons" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="Navik_DBModel.Receipt" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="Navik_DBModel.Payment" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Navik_DBModel.Cardex" Width="1.5" PointX="3.375" PointY="5.75" />
+        <EntityTypeShape EntityType="Navik_DBModel.Inventory" Width="1.5" PointX="5.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

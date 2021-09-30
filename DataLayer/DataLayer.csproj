@@ -50,7 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cardex.cs">
+      <DependentUpon>LoginModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Context\UnitOfWork.cs" />
+    <Compile Include="Inventory.cs">
+      <DependentUpon>LoginModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <DependentUpon>LoginModel.tt</DependentUpon>
     </Compile>

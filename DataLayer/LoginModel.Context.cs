@@ -29,5 +29,7 @@ namespace DataLayer
         public virtual DbSet<Persons> Persons { get; set; }
         public virtual DbSet<Receipt> Receipt { get; set; }
         public virtual DbSet<Payment> Payment { get; set; }
+        public virtual DbSet<Cardex> Cardex { get; set; }
+        public virtual DbSet<Inventory> Inventory { get; set; }
     }
 }

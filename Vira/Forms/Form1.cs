@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Utility.Converter;
+using Vira.Forms.InventoryForms;
 using Vira.Forms.PaymentsForm;
 using Vira.Forms.PersonsForms;
 using Vira.Forms.ReceiptsForms;
@@ -80,6 +81,29 @@ namespace Vira
         {
             PaymentListForm paymentList = new PaymentListForm();
             paymentList.Show();
+        }
+
+        private void btnCardex_Click(object sender, EventArgs e)
+        {
+            CardexForm cardex = new CardexForm();
+            cardex.Show();
+        }
+
+        private void btnNewProduct_Click(object sender, EventArgs e)
+        {
+            NewProductOrServiceForm newProduct = new NewProductOrServiceForm();
+            newProduct.Show();
+        }
+
+        private void btnNewService_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            InventoryForm inventory = new InventoryForm();
+            inventory.Show();
         }
     }
 }

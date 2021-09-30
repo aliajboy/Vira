@@ -46,6 +46,7 @@ namespace DataLayer.Context
                 return _ReceiptRepository;
             }
         }
+
         private GenericRepository<Payment> _PaymentRepository;
         public GenericRepository<Payment> PaymentRepository
         {
@@ -56,6 +57,32 @@ namespace DataLayer.Context
                     _PaymentRepository = new GenericRepository<Payment>(db);
                 }
                 return _PaymentRepository;
+            }
+        }
+
+        private GenericRepository<Cardex> _CardexRepository;
+        public GenericRepository<Cardex> CardexRepository
+        {
+            get
+            {
+                if (_CardexRepository == null)
+                {
+                    _CardexRepository = new GenericRepository<Cardex>(db);
+                }
+                return _CardexRepository;
+            }
+        }
+
+        private GenericRepository<Inventory> _InventoryRepository;
+        public GenericRepository<Inventory> InventoryRepository
+        {
+            get
+            {
+                if (_InventoryRepository == null)
+                {
+                    _InventoryRepository = new GenericRepository<Inventory>(db);
+                }
+                return _InventoryRepository;
             }
         }
         public void Dispose()

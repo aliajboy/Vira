@@ -51,7 +51,7 @@ namespace DataLayer.Services
         }
         public void Save()
         {
-            _db.SaveChanges();
+            _db.SaveChangesAsync().Wait();
         }
         public virtual void update(TEntity entity, Expression<Func<TEntity, bool>> where = null)
         {

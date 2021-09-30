@@ -71,6 +71,30 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InventoryForms\AddOrEditInventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\AddOrEditInventoryForm.Designer.cs">
+      <DependentUpon>AddOrEditInventoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\CardexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\CardexForm.Designer.cs">
+      <DependentUpon>CardexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\InventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\InventoryForm.Designer.cs">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\NewProductOrServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\NewProductOrServiceForm.Designer.cs">
+      <DependentUpon>NewProductOrServiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +181,18 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryForms\AddOrEditInventoryForm.resx">
+      <DependentUpon>AddOrEditInventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryForms\CardexForm.resx">
+      <DependentUpon>CardexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryForms\InventoryForm.resx">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryForms\NewProductOrServiceForm.resx">
+      <DependentUpon>NewProductOrServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,5 +256,6 @@
   <ItemGroup>
     <None Include="Resources\vira.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
