@@ -71,7 +71,8 @@ namespace Vira.Forms.InventoryForms
 
         private void NewProductOrServiceForm_Load(object sender, EventArgs e)
         {
-
+            // TODO: This line of code loads data into the 'navik_DBDataSet.Inventory' table. You can move, or remove it, as needed.
+            this.inventoryTableAdapter.Fill(this.navik_DBDataSet.Inventory);
         }
     }
 }

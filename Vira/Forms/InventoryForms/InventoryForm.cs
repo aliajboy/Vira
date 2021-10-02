@@ -20,13 +20,49 @@ namespace Vira.Forms.InventoryForms
 
         private void InventoryForm_Load(object sender, EventArgs e)
         {
+            dgInventory.AutoGenerateColumns = false;
+            BindGrid();
+        }
+
+        private void BindGrid()
+        {
             dgInventory.DataSource = db.InventoryRepository.GetAll();
         }
 
         private void btnNewInventory_Click(object sender, EventArgs e)
         {
             AddOrEditInventoryForm addOrEdit = new AddOrEditInventoryForm();
-            addOrEdit.Show();
+            if (addOrEdit.ShowDialog() == DialogResult.OK)
+            {
+                addOrEdit.Close();
+                BindGrid();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var inventoryID = int.Parse(dgInventory.CurrentRow.Cells[0].Value.ToString());
+            AddOrEditInventoryForm addOrEdit = new AddOrEditInventoryForm();
+            addOrEdit.inventoryId = inventoryID;
+            if (addOrEdit.ShowDialog() == DialogResult.OK)
+            {
+                addOrEdit.Close();
+                BindGrid();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgInventory.CurrentRow != null)
+            {
+                string name = dgInventory.CurrentRow.Cells[1].Value.ToString();
+                if (RtlMessageBox.Show($"آیا از حذف انبار {name} اطمینان دارید؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    db.InventoryRepository.Delete(int.Parse(dgInventory.CurrentRow.Cells[0].Value.ToString()));
+                    db.InventoryRepository.Save();
+                    BindGrid();
+                }
+            }
         }
     }
 }

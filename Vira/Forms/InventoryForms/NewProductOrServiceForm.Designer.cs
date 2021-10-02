@@ -61,11 +61,16 @@
             this.requiredFieldValidator5 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator6 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator7 = new ValidationComponents.RequiredFieldValidator(this.components);
+            this.navik_DBDataSet = new Vira.Navik_DBDataSet();
+            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventoryTableAdapter = new Vira.Navik_DBDataSetTableAdapters.InventoryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMinNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navik_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -137,9 +142,9 @@
             // 
             // cbInventory
             // 
+            this.cbInventory.DataSource = this.inventoryBindingSource;
+            this.cbInventory.DisplayMember = "Name";
             this.cbInventory.FormattingEnabled = true;
-            this.cbInventory.Items.AddRange(new object[] {
-            "dfgdfgdfg"});
             this.cbInventory.Location = new System.Drawing.Point(543, 84);
             this.cbInventory.Name = "cbInventory";
             this.cbInventory.Size = new System.Drawing.Size(186, 27);
@@ -345,6 +350,20 @@
             this.requiredFieldValidator7.ErrorMessage = "تعداد سفارش را وارد نمایید";
             this.requiredFieldValidator7.Icon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator7.Icon")));
             // 
+            // navik_DBDataSet
+            // 
+            this.navik_DBDataSet.DataSetName = "Navik_DBDataSet";
+            this.navik_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // inventoryBindingSource
+            // 
+            this.inventoryBindingSource.DataMember = "Inventory";
+            this.inventoryBindingSource.DataSource = this.navik_DBDataSet;
+            // 
+            // inventoryTableAdapter
+            // 
+            this.inventoryTableAdapter.ClearBeforeFill = true;
+            // 
             // NewProductOrServiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -386,6 +405,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMinNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navik_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,5 +445,8 @@
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator5;
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator6;
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator7;
+        private Navik_DBDataSet navik_DBDataSet;
+        private System.Windows.Forms.BindingSource inventoryBindingSource;
+        private Navik_DBDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
     }
 }

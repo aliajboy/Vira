@@ -62,8 +62,8 @@ namespace Vira
                 if (addOrEdit.ShowDialog() == DialogResult.OK)
                 {
                     MessageBox.Show("ویرایش کاربر با موفقیت انجام شد");
-                    BindGrid();
                 }
+                dgUsers.DataSource = db.LoginRepository.Get();
             }
             catch
             {
