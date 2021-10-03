@@ -26,6 +26,7 @@ namespace DataLayer.Services
             }
             return query.ToList();
         }
+
         public virtual IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> where = null)
         {
             IQueryable<TEntity> query = _dbSet;
@@ -49,6 +50,12 @@ namespace DataLayer.Services
             var entity = GetById(Id);
             _dbSet.Remove(entity);
         }
+
+        public object Last()
+        {
+            return _dbSet.LastOrDefault();
+        }
+
         public void Save()
         {
             _db.SaveChangesAsync().Wait();

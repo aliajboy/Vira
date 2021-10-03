@@ -137,10 +137,33 @@
     <Compile Include="Forms\ReceiptsForms\ReceiptListForm.Designer.cs">
       <DependentUpon>ReceiptListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TimeEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TimeEditForm.Designer.cs">
+      <DependentUpon>TimeEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimeSubmitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TimeSubmitForm.Designer.cs">
+      <DependentUpon>TimeSubmitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserTimesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserTimesForm.Designer.cs">
+      <DependentUpon>UserTimesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Navik_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Navik_DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Navik_DBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Navik_DBDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -219,6 +242,15 @@
     <EmbeddedResource Include="Forms\ReceiptsForms\ReceiptListForm.resx">
       <DependentUpon>ReceiptListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimeEditForm.resx">
+      <DependentUpon>TimeEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimeSubmitForm.resx">
+      <DependentUpon>TimeSubmitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserTimesForm.resx">
+      <DependentUpon>UserTimesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -242,6 +274,17 @@
     </None>
     <None Include="Navik_DBDataSet.xss">
       <DependentUpon>Navik_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Navik_DBDataSet1.xsc">
+      <DependentUpon>Navik_DBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Navik_DBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Navik_DBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Navik_DBDataSet1.xss">
+      <DependentUpon>Navik_DBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

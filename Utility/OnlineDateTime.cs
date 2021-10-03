@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Globalization;
 using System.Net;
 using System.Net.Sockets;
+using System.Windows.Forms;
 
 namespace Vira.Utility
 {
@@ -12,7 +12,7 @@ namespace Vira.Utility
             try
             {
                 //default Windows time server
-                const string ntpServer = "time.windows.com";
+                const string ntpServer = "time.cloudflare.com";
 
                 // NTP message size - 16 bytes of the digest (RFC 2030)
                 var ntpData = new byte[48];
@@ -61,6 +61,7 @@ namespace Vira.Utility
             }
             catch
             {
+                MessageBox.Show("اتصال به اینترنت را بررسی نمایید");
                 return DateTime.Now;
             }
         }

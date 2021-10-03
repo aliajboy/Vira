@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Utility.Converter;
+using Vira.Forms;
 using Vira.Forms.InventoryForms;
 using Vira.Forms.PaymentsForm;
 using Vira.Forms.PersonsForms;
@@ -97,13 +98,32 @@ namespace Vira
 
         private void btnNewService_Click(object sender, EventArgs e)
         {
-
+            NewProductOrServiceForm newProduct = new NewProductOrServiceForm();
+            newProduct.Service = 1;
+            newProduct.Show();
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
             InventoryForm inventory = new InventoryForm();
             inventory.Show();
+        }
+
+        private void btnCheckReciept_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimeSubmit_Click(object sender, EventArgs e)
+        {
+            TimeSubmitForm submitForm = new TimeSubmitForm();
+            submitForm.Show();
+        }
+
+        private void btnTimes_Click(object sender, EventArgs e)
+        {
+            UserTimesForm userTimes = new UserTimesForm();
+            userTimes.Show();
         }
     }
 }

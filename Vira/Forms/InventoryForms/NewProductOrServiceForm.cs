@@ -10,6 +10,7 @@ namespace Vira.Forms.InventoryForms
     public partial class NewProductOrServiceForm : Form
     {
         UnitOfWork db = new UnitOfWork();
+        public int Service = 0;
         public NewProductOrServiceForm()
         {
             InitializeComponent();
@@ -73,6 +74,12 @@ namespace Vira.Forms.InventoryForms
         {
             // TODO: This line of code loads data into the 'navik_DBDataSet.Inventory' table. You can move, or remove it, as needed.
             this.inventoryTableAdapter.Fill(this.navik_DBDataSet.Inventory);
+            if (Service != 0)
+            {
+                this.Text = "     خدمات جدید";
+                lblName.Text = "نام خدمات :";
+                lblPrice.Text = "قیمت خدمات :";
+            }
         }
     }
 }

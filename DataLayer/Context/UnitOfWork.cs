@@ -85,6 +85,19 @@ namespace DataLayer.Context
                 return _InventoryRepository;
             }
         }
+
+        private GenericRepository<LoginTime> _LogintimeRepository;
+        public GenericRepository<LoginTime> LogintimeRepository
+        {
+            get
+            {
+                if (_LogintimeRepository == null)
+                {
+                    _LogintimeRepository = new GenericRepository<LoginTime>(db);
+                }
+                return _LogintimeRepository;
+            }
+        }
         public void Dispose()
         {
             db.Dispose();
