@@ -37,6 +37,13 @@
           <Property Name="LoginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Salary" Type="int" />
+          <Property Name="InsuranceCost" Type="int" />
+          <Property Name="OverTime" Type="int" />
+          <Property Name="AllowedMonthlyHours" Type="int" />
+          <Property Name="AllowedDailyHours" Type="int" />
+          <Property Name="Delay" Type="int" />
+          <Property Name="Vacation" Type="int" />
         </EntityType>
         <EntityType Name="LoginTime">
           <Key>
@@ -83,6 +90,7 @@
           <Property Name="CompanyID" Type="varchar" MaxLength="20" />
           <Property Name="EconomicCode" Type="varchar" MaxLength="20" />
           <Property Name="Adress" Type="nvarchar(max)" />
+          <Property Name="PostalCode" Type="int" />
         </EntityType>
         <EntityType Name="Receipt">
           <Key>
@@ -123,6 +131,13 @@
           <Property Name="LoginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Salary" Type="Int32" />
+          <Property Name="InsuranceCost" Type="Int32" />
+          <Property Name="OverTime" Type="Int32" />
+          <Property Name="AllowedMonthlyHours" Type="Int32" />
+          <Property Name="AllowedDailyHours" Type="Int32" />
+          <Property Name="Delay" Type="Int32" />
+          <Property Name="Vacation" Type="Int32" />
         </EntityType>
         <EntityContainer Name="Navik_DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Logins" EntityType="Self.Login" />
@@ -149,6 +164,7 @@
           <Property Name="CompanyID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="EconomicCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="Int32" />
         </EntityType>
         <EntityType Name="Receipt">
           <Key>
@@ -232,6 +248,13 @@
           <EntitySetMapping Name="Logins">
             <EntityTypeMapping TypeName="Navik_DBModel.Login">
               <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="Vacation" ColumnName="Vacation" />
+                <ScalarProperty Name="Delay" ColumnName="Delay" />
+                <ScalarProperty Name="AllowedDailyHours" ColumnName="AllowedDailyHours" />
+                <ScalarProperty Name="AllowedMonthlyHours" ColumnName="AllowedMonthlyHours" />
+                <ScalarProperty Name="OverTime" ColumnName="OverTime" />
+                <ScalarProperty Name="InsuranceCost" ColumnName="InsuranceCost" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
                 <ScalarProperty Name="LoginID" ColumnName="LoginID" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
@@ -241,6 +264,7 @@
           <EntitySetMapping Name="Persons">
             <EntityTypeMapping TypeName="Navik_DBModel.Persons">
               <MappingFragment StoreEntitySet="Persons">
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
                 <ScalarProperty Name="Adress" ColumnName="Adress" />
                 <ScalarProperty Name="EconomicCode" ColumnName="EconomicCode" />
                 <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />

@@ -26,5 +26,6 @@ namespace DataLayer
         public string CompanyID { get; set; }
         public string EconomicCode { get; set; }
         public string Adress { get; set; }
+        public Nullable<int> PostalCode { get; set; }
     }
 }

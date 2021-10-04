@@ -54,7 +54,10 @@
             this.cbGroup = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.postalCode = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.postalCode)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancell
@@ -91,7 +94,7 @@
             this.txtAdress.Location = new System.Drawing.Point(21, 211);
             this.txtAdress.Multiline = true;
             this.txtAdress.Name = "txtAdress";
-            this.txtAdress.Size = new System.Drawing.Size(290, 115);
+            this.txtAdress.Size = new System.Drawing.Size(290, 67);
             this.txtAdress.TabIndex = 40;
             // 
             // groupBox1
@@ -275,11 +278,34 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "دسته بندی :";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(251, 303);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(59, 19);
+            this.label12.TabIndex = 44;
+            this.label12.Text = "کد پستی :";
+            // 
+            // postalCode
+            // 
+            this.postalCode.Location = new System.Drawing.Point(15, 300);
+            this.postalCode.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.postalCode.Name = "postalCode";
+            this.postalCode.Size = new System.Drawing.Size(230, 26);
+            this.postalCode.TabIndex = 45;
+            // 
             // AddOrEditPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(635, 384);
+            this.Controls.Add(this.postalCode);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.btnCancell);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label11);
@@ -310,6 +336,7 @@
             this.Load += new System.EventHandler(this.AddOrEditPersonForm_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.postalCode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,5 +369,7 @@
         private System.Windows.Forms.ComboBox cbGroup;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown postalCode;
     }
 }

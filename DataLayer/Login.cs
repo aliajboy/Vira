@@ -17,5 +17,12 @@ namespace DataLayer
         public int LoginID { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
+        public Nullable<int> Salary { get; set; }
+        public Nullable<int> InsuranceCost { get; set; }
+        public Nullable<int> OverTime { get; set; }
+        public Nullable<int> AllowedMonthlyHours { get; set; }
+        public Nullable<int> AllowedDailyHours { get; set; }
+        public Nullable<int> Delay { get; set; }
+        public Nullable<int> Vacation { get; set; }
     }
 }

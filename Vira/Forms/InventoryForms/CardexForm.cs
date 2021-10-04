@@ -37,9 +37,10 @@ namespace Vira.Forms.InventoryForms
 
         private void dgCardex_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgCardex.CurrentRow.Cells[4].Selected)
+            if (dgCardex.CurrentRow.Cells[8].Selected)
             {
-                Process.Start(dgCardex.CurrentRow.Cells[4].Value.ToString());
+                var url = dgCardex.CurrentRow.Cells[8].Value.ToString();
+                Process.Start(url);
             }
         }
     }

@@ -30,6 +30,7 @@ namespace Vira.Forms.PersonsForms
                 txtCompanyId.Text = db.UserRepository.GetById(personId).CompanyID;
                 txtEconomicCode.Text = db.UserRepository.GetById(personId).EconomicCode;
                 txtAdress.Text = db.UserRepository.GetById(personId).Adress;
+                postalCode.Value = (int)(db.UserRepository.GetById(personId).PostalCode);
             }
         }
 
@@ -47,7 +48,8 @@ namespace Vira.Forms.PersonsForms
                 NationalID = txtIdCode.Text,
                 CompanyID = txtCompanyId.Text,
                 EconomicCode = txtEconomicCode.Text,
-                Adress = txtAdress.Text
+                Adress = txtAdress.Text,
+                PostalCode = int.Parse(postalCode.Value.ToString())
             };
             if (personId == 0)
             {
