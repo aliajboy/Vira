@@ -41,13 +41,20 @@ namespace Vira.Forms.InventoryForms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            var inventoryID = int.Parse(dgInventory.CurrentRow.Cells[0].Value.ToString());
-            AddOrEditInventoryForm addOrEdit = new AddOrEditInventoryForm();
-            addOrEdit.inventoryId = inventoryID;
-            if (addOrEdit.ShowDialog() == DialogResult.OK)
+            if (dgInventory.CurrentRow != null)
             {
-                addOrEdit.Close();
-                BindGrid();
+                var inventoryID = int.Parse(dgInventory.CurrentRow.Cells[0].Value.ToString());
+                AddOrEditInventoryForm addOrEdit = new AddOrEditInventoryForm();
+                addOrEdit.inventoryId = inventoryID;
+                if (addOrEdit.ShowDialog() == DialogResult.OK)
+                {
+                    addOrEdit.Close();
+                    BindGrid();
+                }
+            }
+            else
+            {
+                MessageBox.Show("لطفا یک انبار را انتخاب نمایید");
             }
         }
 
@@ -62,6 +69,10 @@ namespace Vira.Forms.InventoryForms
                     db.InventoryRepository.Save();
                     BindGrid();
                 }
+            }
+            else
+            {
+                MessageBox.Show("لطفا یک انبار را انتخاب نمایید");
             }
         }
     }

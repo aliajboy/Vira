@@ -41,5 +41,11 @@ namespace Vira.Forms
             string search = cbName.Text;
             dgTimes.DataSource = db.LogintimeRepository.Get(c => c.Name.Contains(search));
         }
+
+        private void btnNewTime_Click(object sender, EventArgs e)
+        {
+            NewTimeSubmitForm newTime = new NewTimeSubmitForm();
+            newTime.ShowDialog();
+        }
     }
 }

@@ -122,7 +122,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(707, 253);
+            this.lblPrice.Location = new System.Drawing.Point(693, 254);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(62, 19);
             this.lblPrice.TabIndex = 6;
@@ -130,14 +130,14 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(543, 251);
+            this.txtPrice.Location = new System.Drawing.Point(556, 252);
             this.txtPrice.Maximum = new decimal(new int[] {
             1215752191,
             23,
             0,
             0});
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(149, 26);
+            this.txtPrice.Size = new System.Drawing.Size(131, 26);
             this.txtPrice.TabIndex = 7;
             // 
             // cbInventory

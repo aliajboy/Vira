@@ -30,20 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgTimes = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbName = new System.Windows.Forms.ComboBox();
-            this.navik_DBDataSet1 = new Vira.Navik_DBDataSet1();
-            this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.loginTableAdapter = new Vira.Navik_DBDataSet1TableAdapters.LoginTableAdapter();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExitTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbName = new System.Windows.Forms.ComboBox();
+            this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.navik_DBDataSet1 = new Vira.Navik_DBDataSet1();
+            this.loginTableAdapter = new Vira.Navik_DBDataSet1TableAdapters.LoginTableAdapter();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnNewTime = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgTimes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.navik_DBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navik_DBDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgTimes
@@ -63,51 +64,6 @@
             this.dgTimes.ReadOnly = true;
             this.dgTimes.Size = new System.Drawing.Size(493, 331);
             this.dgTimes.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(453, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "جستجو :";
-            // 
-            // cbName
-            // 
-            this.cbName.DataSource = this.loginBindingSource;
-            this.cbName.DisplayMember = "UserName";
-            this.cbName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbName.FormattingEnabled = true;
-            this.cbName.Location = new System.Drawing.Point(255, 24);
-            this.cbName.Name = "cbName";
-            this.cbName.Size = new System.Drawing.Size(192, 27);
-            this.cbName.TabIndex = 2;
-            this.cbName.SelectedIndexChanged += new System.EventHandler(this.cbName_SelectedIndexChanged);
-            // 
-            // navik_DBDataSet1
-            // 
-            this.navik_DBDataSet1.DataSetName = "Navik_DBDataSet1";
-            this.navik_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // loginBindingSource
-            // 
-            this.loginBindingSource.DataMember = "Login";
-            this.loginBindingSource.DataSource = this.navik_DBDataSet1;
-            // 
-            // loginTableAdapter
-            // 
-            this.loginTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(12, 10);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(79, 52);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "ویرایش";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // ID
             // 
@@ -145,24 +101,80 @@
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(453, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "جستجو :";
+            // 
+            // cbName
+            // 
+            this.cbName.DataSource = this.loginBindingSource;
+            this.cbName.DisplayMember = "UserName";
+            this.cbName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbName.FormattingEnabled = true;
+            this.cbName.Location = new System.Drawing.Point(255, 24);
+            this.cbName.Name = "cbName";
+            this.cbName.Size = new System.Drawing.Size(192, 27);
+            this.cbName.TabIndex = 2;
+            this.cbName.SelectedIndexChanged += new System.EventHandler(this.cbName_SelectedIndexChanged);
+            // 
+            // loginBindingSource
+            // 
+            this.loginBindingSource.DataMember = "Login";
+            this.loginBindingSource.DataSource = this.navik_DBDataSet1;
+            // 
+            // navik_DBDataSet1
+            // 
+            this.navik_DBDataSet1.DataSetName = "Navik_DBDataSet1";
+            this.navik_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // loginTableAdapter
+            // 
+            this.loginTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(12, 10);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(79, 52);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "ویرایش";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnNewTime
+            // 
+            this.btnNewTime.Location = new System.Drawing.Point(97, 10);
+            this.btnNewTime.Name = "btnNewTime";
+            this.btnNewTime.Size = new System.Drawing.Size(79, 52);
+            this.btnNewTime.TabIndex = 4;
+            this.btnNewTime.Text = "افزودن";
+            this.btnNewTime.UseVisualStyleBackColor = true;
+            this.btnNewTime.Click += new System.EventHandler(this.btnNewTime_Click);
+            // 
             // UserTimesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 413);
+            this.Controls.Add(this.btnNewTime);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.cbName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgTimes);
             this.Font = new System.Drawing.Font("IRANSansWeb", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserTimesForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "     لیست ورود و خروج ها";
             this.Load += new System.EventHandler(this.UserTimesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgTimes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.navik_DBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navik_DBDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +194,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn InTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExitTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.Button btnNewTime;
     }
 }

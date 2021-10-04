@@ -32,7 +32,7 @@ namespace Vira.Forms
             string date = DateConvertor.PersianDate(DateTime.Now);
             string time = DateTime.UtcNow.AddHours(3).AddMinutes(30).ToString("HH:mm:ss");
             string datetime = date + "-" + time;
-            user.ExitTime = datetime;
+            user.ExitTime = time;
             if (db.LogintimeRepository.Get(c => c.Name == cbName.Text && c.ExitTime != null).Any())
             {
                 MessageBox.Show("خروج شما ثبت شده است");
