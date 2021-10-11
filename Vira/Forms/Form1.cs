@@ -6,6 +6,7 @@ using Vira.Forms.InventoryForms;
 using Vira.Forms.PaymentsForm;
 using Vira.Forms.PersonsForms;
 using Vira.Forms.ReceiptsForms;
+using Vira.Forms.Sales;
 
 namespace Vira
 {
@@ -124,6 +125,12 @@ namespace Vira
         {
             UserTimesForm userTimes = new UserTimesForm();
             userTimes.Show();
+        }
+
+        private void btnNewSale_Click(object sender, EventArgs e)
+        {
+            NewSaleForm saleForm = new NewSaleForm();
+            saleForm.Show();
         }
     }
 }

@@ -44,10 +44,18 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\DataLayer\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FarsiLibrary.Utils, Version=2.7.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Farsi.Library.2.7.0\lib\net46\FarsiLibrary.Utils.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -142,6 +150,18 @@
     </Compile>
     <Compile Include="Forms\ReceiptsForms\ReceiptListForm.Designer.cs">
       <DependentUpon>ReceiptListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sales\AddPoroductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sales\AddPoroductForm.Designer.cs">
+      <DependentUpon>AddPoroductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sales\NewSaleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sales\NewSaleForm.Designer.cs">
+      <DependentUpon>NewSaleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TimeEditForm.cs">
       <SubType>Form</SubType>
@@ -251,6 +271,12 @@
     <EmbeddedResource Include="Forms\ReceiptsForms\ReceiptListForm.resx">
       <DependentUpon>ReceiptListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sales\AddPoroductForm.resx">
+      <DependentUpon>AddPoroductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sales\NewSaleForm.resx">
+      <DependentUpon>NewSaleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TimeEditForm.resx">
       <DependentUpon>TimeEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +321,7 @@
     <None Include="Navik_DBDataSet1.xss">
       <DependentUpon>Navik_DBDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -323,9 +350,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\vira.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Sales\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

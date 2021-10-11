@@ -98,6 +98,32 @@ namespace DataLayer.Context
                 return _LogintimeRepository;
             }
         }
+
+        private GenericRepository<Factor> _FactorRepository;
+        public GenericRepository<Factor> FactorRepository
+        {
+            get
+            {
+                if (_FactorRepository == null)
+                {
+                    _FactorRepository = new GenericRepository<Factor>(db);
+                }
+                return _FactorRepository;
+            }
+        }
+
+        private GenericRepository<FactorProducts> _FactorProductsRepository;
+        public GenericRepository<FactorProducts> FactorProductsRepository
+        {
+            get
+            {
+                if (_FactorProductsRepository == null)
+                {
+                    _FactorProductsRepository = new GenericRepository<FactorProducts>(db);
+                }
+                return _FactorProductsRepository;
+            }
+        }
         public void Dispose()
         {
             db.Dispose();

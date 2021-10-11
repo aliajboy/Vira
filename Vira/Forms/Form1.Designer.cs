@@ -59,7 +59,7 @@
             this.چکهایپرداختیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.چکهایبرگشتیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.فروشجدیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnNewSale = new System.Windows.Forms.ToolStripMenuItem();
             this.برگشتازفروToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.فاکتورهایفروشToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.فاکتورهایبرگشتازفروشToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,6 +85,7 @@
             this.اطلاعاتکسبوکارToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUserManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.اعلاناتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTimes = new System.Windows.Forms.ToolStripMenuItem();
             this.Date = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.Time = new System.Windows.Forms.ToolStripStatusLabel();
@@ -92,7 +93,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnTimeSubmit = new System.Windows.Forms.Button();
-            this.btnTimes = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -337,7 +337,7 @@
             // 
             this.toolStripDropDownButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.فروشجدیدToolStripMenuItem,
+            this.btnNewSale,
             this.برگشتازفروToolStripMenuItem,
             this.فاکتورهایفروشToolStripMenuItem,
             this.فاکتورهایبرگشتازفروشToolStripMenuItem});
@@ -348,11 +348,12 @@
             this.toolStripDropDownButton4.Size = new System.Drawing.Size(51, 23);
             this.toolStripDropDownButton4.Text = "فروش";
             // 
-            // فروشجدیدToolStripMenuItem
+            // btnNewSale
             // 
-            this.فروشجدیدToolStripMenuItem.Name = "فروشجدیدToolStripMenuItem";
-            this.فروشجدیدToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.فروشجدیدToolStripMenuItem.Text = "فروش جدید";
+            this.btnNewSale.Name = "btnNewSale";
+            this.btnNewSale.Size = new System.Drawing.Size(210, 24);
+            this.btnNewSale.Text = "فروش جدید";
+            this.btnNewSale.Click += new System.EventHandler(this.btnNewSale_Click);
             // 
             // برگشتازفروToolStripMenuItem
             // 
@@ -535,21 +536,28 @@
             // اطلاعاتکسبوکارToolStripMenuItem
             // 
             this.اطلاعاتکسبوکارToolStripMenuItem.Name = "اطلاعاتکسبوکارToolStripMenuItem";
-            this.اطلاعاتکسبوکارToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.اطلاعاتکسبوکارToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
             this.اطلاعاتکسبوکارToolStripMenuItem.Text = "اطلاعات کسب و کار";
             // 
             // btnUserManagement
             // 
             this.btnUserManagement.Name = "btnUserManagement";
-            this.btnUserManagement.Size = new System.Drawing.Size(180, 24);
+            this.btnUserManagement.Size = new System.Drawing.Size(177, 24);
             this.btnUserManagement.Text = "مدیریت کاربران";
             this.btnUserManagement.Click += new System.EventHandler(this.btnUserManagement_Click);
             // 
             // اعلاناتToolStripMenuItem
             // 
             this.اعلاناتToolStripMenuItem.Name = "اعلاناتToolStripMenuItem";
-            this.اعلاناتToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.اعلاناتToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
             this.اعلاناتToolStripMenuItem.Text = "اعلانات";
+            // 
+            // btnTimes
+            // 
+            this.btnTimes.Name = "btnTimes";
+            this.btnTimes.Size = new System.Drawing.Size(177, 24);
+            this.btnTimes.Text = "ورود و خروج کاربران";
+            this.btnTimes.Click += new System.EventHandler(this.btnTimes_Click);
             // 
             // Date
             // 
@@ -613,13 +621,6 @@
             this.btnTimeSubmit.UseVisualStyleBackColor = true;
             this.btnTimeSubmit.Click += new System.EventHandler(this.btnTimeSubmit_Click);
             // 
-            // btnTimes
-            // 
-            this.btnTimes.Name = "btnTimes";
-            this.btnTimes.Size = new System.Drawing.Size(180, 24);
-            this.btnTimes.Text = "ورود و خروج کاربران";
-            this.btnTimes.Click += new System.EventHandler(this.btnTimes_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -681,7 +682,7 @@
         private System.Windows.Forms.ToolStripMenuItem چکهایپرداختیToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem چکهایبرگشتیToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton4;
-        private System.Windows.Forms.ToolStripMenuItem فروشجدیدToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnNewSale;
         private System.Windows.Forms.ToolStripMenuItem برگشتازفروToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem فاکتورهایفروشToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem فاکتورهایبرگشتازفروشToolStripMenuItem;

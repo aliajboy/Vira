@@ -56,14 +56,14 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancell = new System.Windows.Forms.Button();
             this.txtCode = new System.Windows.Forms.NumericUpDown();
-            this.requiredFieldValidator1 = new ValidationComponents.RequiredFieldValidator(this.components);
-            this.requiredFieldValidator2 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator3 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator4 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator5 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator6 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator7 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.inventoryTableAdapter = new Vira.Navik_DBDataSetTableAdapters.InventoryTableAdapter();
+            this.requiredFieldValidator1 = new ValidationComponents.RequiredFieldValidator(this.components);
+            this.requiredFieldValidator2 = new ValidationComponents.RequiredFieldValidator(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
@@ -144,6 +144,7 @@
             // 
             this.cbInventory.DataSource = this.inventoryBindingSource;
             this.cbInventory.DisplayMember = "Name";
+            this.cbInventory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbInventory.FormattingEnabled = true;
             this.cbInventory.Location = new System.Drawing.Point(543, 84);
             this.cbInventory.Name = "cbInventory";
@@ -311,20 +312,6 @@
             this.txtCode.Size = new System.Drawing.Size(120, 26);
             this.txtCode.TabIndex = 26;
             // 
-            // requiredFieldValidator1
-            // 
-            this.requiredFieldValidator1.CancelFocusChangeWhenInvalid = false;
-            this.requiredFieldValidator1.ControlToValidate = this.txtCode;
-            this.requiredFieldValidator1.ErrorMessage = "کد محصول را وارد کنید";
-            this.requiredFieldValidator1.Icon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator1.Icon")));
-            // 
-            // requiredFieldValidator2
-            // 
-            this.requiredFieldValidator2.CancelFocusChangeWhenInvalid = false;
-            this.requiredFieldValidator2.ControlToValidate = this.txtName;
-            this.requiredFieldValidator2.ErrorMessage = "نام کالا یا خدمات را وارد کنید";
-            this.requiredFieldValidator2.Icon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator2.Icon")));
-            // 
             // requiredFieldValidator3
             // 
             this.requiredFieldValidator3.CancelFocusChangeWhenInvalid = false;
@@ -363,6 +350,20 @@
             // inventoryTableAdapter
             // 
             this.inventoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // requiredFieldValidator1
+            // 
+            this.requiredFieldValidator1.CancelFocusChangeWhenInvalid = false;
+            this.requiredFieldValidator1.ControlToValidate = this.txtCode;
+            this.requiredFieldValidator1.ErrorMessage = "کد محصول را وارد کنید";
+            this.requiredFieldValidator1.Icon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator1.Icon")));
+            // 
+            // requiredFieldValidator2
+            // 
+            this.requiredFieldValidator2.CancelFocusChangeWhenInvalid = false;
+            this.requiredFieldValidator2.ControlToValidate = this.txtName;
+            this.requiredFieldValidator2.ErrorMessage = "لطفا نام محصول را وارد نمایید";
+            this.requiredFieldValidator2.Icon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator2.Icon")));
             // 
             // NewProductOrServiceForm
             // 
@@ -438,8 +439,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancell;
         private System.Windows.Forms.NumericUpDown txtCode;
-        private ValidationComponents.RequiredFieldValidator requiredFieldValidator1;
-        private ValidationComponents.RequiredFieldValidator requiredFieldValidator2;
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator3;
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator4;
         private ValidationComponents.RequiredFieldValidator requiredFieldValidator5;
@@ -448,5 +447,7 @@
         private Navik_DBDataSet navik_DBDataSet;
         private System.Windows.Forms.BindingSource inventoryBindingSource;
         private Navik_DBDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
+        private ValidationComponents.RequiredFieldValidator requiredFieldValidator1;
+        private ValidationComponents.RequiredFieldValidator requiredFieldValidator2;
     }
 }

@@ -37,7 +37,7 @@ namespace Vira.Forms.InventoryForms
                         ProductID = int.Parse(txtCode.Value.ToString()),
                         Name = txtName.Text,
                         Number = int.Parse(txtNumber.Value.ToString()),
-                        Inventory = cbInventory.SelectedItem.ToString(),
+                        Inventory = cbInventory.Text,
                         Place1 = txtPlace1.Text,
                         Place2 = txtPlace2.Text,
                         MinNumber = int.Parse(txtMinNumber.Value.ToString()),

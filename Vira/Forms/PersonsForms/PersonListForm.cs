@@ -65,5 +65,11 @@ namespace Vira.Forms.PersonsForms
             name = dgPersons.CurrentRow.Cells[2].Value.ToString();
             this.Close();
         }
+
+        private void btnNewPerson_Click(object sender, EventArgs e)
+        {
+            AddOrEditPersonForm addOrEdit = new AddOrEditPersonForm();
+            addOrEdit.ShowDialog();
+        }
     }
 }

@@ -32,5 +32,7 @@ namespace DataLayer
         public virtual DbSet<Cardex> Cardex { get; set; }
         public virtual DbSet<Inventory> Inventory { get; set; }
         public virtual DbSet<LoginTime> LoginTime { get; set; }
+        public virtual DbSet<Factor> Factor { get; set; }
+        public virtual DbSet<FactorProducts> FactorProducts { get; set; }
     }
 }

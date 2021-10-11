@@ -46,10 +46,7 @@
             this.EconomicCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.btnNewPerson = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPersons)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,57 +212,22 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // label2
+            // btnNewPerson
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(493, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 19);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "دسته بندی بر اساس :";
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(294, 34);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(56, 23);
-            this.radioButton3.TabIndex = 12;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "کارمند";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(356, 34);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(67, 23);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "فروشنده";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(429, 34);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(58, 23);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "خریدار";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.btnNewPerson.Location = new System.Drawing.Point(216, 12);
+            this.btnNewPerson.Name = "btnNewPerson";
+            this.btnNewPerson.Size = new System.Drawing.Size(96, 67);
+            this.btnNewPerson.TabIndex = 10;
+            this.btnNewPerson.Text = "افزودن";
+            this.btnNewPerson.UseVisualStyleBackColor = true;
+            this.btnNewPerson.Click += new System.EventHandler(this.btnNewPerson_Click);
             // 
             // PersonListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.btnNewPerson);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.label1);
@@ -303,9 +265,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EconomicCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Adress;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button btnNewPerson;
     }
 }
